@@ -1,0 +1,52 @@
+[
+  {
+    "id": "95d52541-58fa-46ba-90db-17b4a9e9577e",
+    "server_id": "c59d1cb9-bef4-400d-aced-88587f9b33cd",
+    "name": "起動チェッカー",
+    "enabled": true,
+    "schedule": "interval",
+    "interval_m": 60,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "if",
+        "cond": {
+          "kind": "server_status",
+          "expect": "STOPPED",
+          "server_id": ""
+        },
+        "then": [
+          {
+            "type": "task",
+            "target": "start",
+            "cmd": ""
+          },
+          {
+            "type": "task",
+            "target": "webhook",
+            "cmd": "",
+            "webhook_body": "{\"content\":\"サーバーが閉じていたので起動します\"}",
+            "webhook_url": "ここにwebhookURL"
+          }
+        ],
+        "else": [
+          {
+            "type": "task",
+            "target": "command",
+            "cmd": "say 起動確認しました"
+          }
+        ],
+        "elseIf": []
+      }
+    ],
+    "next": 1760211874,
+    "last": null,
+    "running": false,
+    "note": "60分ごとにサーバーが起動しているかチェックします\nもし起動していなかったら起動をします&DiscordWebhookにて信号を送信します"
+  }
+]
