@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ab008119-49e7-4d17-9bc4-a2b6225762f0",
+    "server_id": "9e6f845b-53cf-4106-aaa6-020aa4feae96",
+    "name": "起動スクリプト",
+    "enabled": true,
+    "schedule": "manual",
+    "interval_m": 0,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "task",
+        "target": "start",
+        "cmd": ""
+      }
+    ],
+    "next": null,
+    "last": null,
+    "running": false,
+    "note": "ただ起動信号を送るだけのスクリプト"
+  }
+]
