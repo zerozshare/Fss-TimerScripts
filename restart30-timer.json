@@ -1,0 +1,147 @@
+[
+  {
+    "id": "55a69aee-3611-4343-9d8d-2094383da369",
+    "server_id": "c59d1cb9-bef4-400d-aced-88587f9b33cd",
+    "name": "再起動通知付き",
+    "enabled": true,
+    "schedule": "manual",
+    "interval_m": 0,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 30秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 10,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 20秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 10,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 10秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 9秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 8秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 7秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 6秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 5秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 4秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 3秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 2秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "command",
+        "cmd": "say 1秒後に再起動します"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "restart",
+        "cmd": ""
+      }
+    ],
+    "next": null,
+    "last": null,
+    "running": false,
+    "note": "30秒後に再起動をするという通知を出し、10秒前からカウントダウン後にrestartが実行されます"
+  }
+]
