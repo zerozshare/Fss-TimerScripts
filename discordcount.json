@@ -17,7 +17,7 @@
         "type": "task",
         "target": "webhook",
         "cmd": "",
-        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_url": "https://discord.com/api/webhooks/などのURL",
         "webhook_body": "{\"content\":\"再起動カウント開始\"}"
       },
       {
@@ -29,7 +29,7 @@
         "type": "task",
         "target": "webhook",
         "cmd": "",
-        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_url": "https://discord.com/api/webhooks/などのURL",
         "webhook_body": "{\"content\":\"3\"}"
       },
       {
@@ -41,7 +41,7 @@
         "type": "task",
         "target": "webhook",
         "cmd": "",
-        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_url": "https://discord.com/api/webhooks/などのURL",
         "webhook_body": "{\"content\":\"2\"}"
       },
       {
@@ -52,8 +52,7 @@
       {
         "type": "task",
         "target": "webhook",
-        "cmd": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
-        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_url": "https://discord.com/api/webhooks/などのURL",
         "webhook_body": "{\"content\":\"1\"}"
       },
       {
