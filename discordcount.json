@@ -1,0 +1,75 @@
+[
+  {
+    "id": "676bce50-90e7-4472-8ad1-5e4047cd0cd0",
+    "server_id": "84b4b20f-7552-4cc9-b06a-26c87ef7073d",
+    "name": "Discordでカウントダウンしてから再起動",
+    "enabled": true,
+    "schedule": "manual",
+    "interval_m": 0,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "task",
+        "target": "webhook",
+        "cmd": "",
+        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_body": "{\"content\":\"再起動カウント開始\"}"
+      },
+      {
+        "type": "gap",
+        "seconds": 3,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "webhook",
+        "cmd": "",
+        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_body": "{\"content\":\"3\"}"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "webhook",
+        "cmd": "",
+        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_body": "{\"content\":\"2\"}"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "webhook",
+        "cmd": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_url": "https://discord.com/api/webhooks/1427552487124107295/8R7T1kBkh9vW6-jmo4OZs4KEoZpMMoljc1gT7wVv--A_Hy_MQLNbi7Am_VU-PZD1tP7n",
+        "webhook_body": "{\"content\":\"1\"}"
+      },
+      {
+        "type": "gap",
+        "seconds": 1,
+        "unit": "sec"
+      },
+      {
+        "type": "task",
+        "target": "restart",
+        "cmd": ""
+      }
+    ],
+    "next": null,
+    "last": null,
+    "running": false,
+    "note": "Discordで再起動通知を3秒してから再起動します！"
+  }
+]
