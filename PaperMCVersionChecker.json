@@ -1,0 +1,242 @@
+[
+  {
+    "id": "dfefe3f2-e113-485f-9e47-a29786d7c888",
+    "server_id": "84b4b20f-7552-4cc9-b06a-26c87ef7073d",
+    "name": "PaperMCのバージョンチェッカー",
+    "enabled": true,
+    "schedule": "interval",
+    "interval_m": 30,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "task",
+        "target": "http",
+        "cmd": "",
+        "http_url": "https://mcversion.zpw.jp/get_api.php",
+        "http_method": "GET",
+        "http_fail_non2xx": true,
+        "http_headers": [],
+        "http_body": "",
+        "http_extract": [
+          {
+            "path": "versions.PaperMC",
+            "name": "javaversion"
+          }
+        ],
+        "data_op": "read",
+        "data_loc": "local",
+        "data_fmt": "json",
+        "data_key": "",
+        "data_path": "",
+        "data_write_mode": "mapping",
+        "data_map": [],
+        "data_raw": "",
+        "data_extract": [],
+        "file_action": "fetch",
+        "file_fetch_url": "",
+        "file_fetch_path": "",
+        "file_fetch_overwrite": true,
+        "file_dl_path": "",
+        "file_dl_name": "",
+        "file_up_path": "",
+        "file_up_overwrite": true
+      },
+      {
+        "type": "if",
+        "cond": {
+          "kind": "file_exists",
+          "expect": "RUNNING",
+          "server_id": "",
+          "path": "versiondata/version.json",
+          "exists": false
+        },
+        "then": [
+          {
+            "type": "task",
+            "target": "data",
+            "cmd": "",
+            "http_url": "",
+            "http_method": "GET",
+            "http_fail_non2xx": true,
+            "http_headers": [],
+            "http_body": "",
+            "http_extract": [],
+            "data_op": "write",
+            "data_loc": "server",
+            "data_fmt": "json",
+            "data_key": "",
+            "data_path": "versiondata/version.json",
+            "data_write_mode": "mapping",
+            "data_map": [
+              {
+                "var": "javaversion",
+                "path": "checkversion"
+              }
+            ],
+            "data_raw": "",
+            "data_extract": [],
+            "file_action": "fetch",
+            "file_fetch_url": "",
+            "file_fetch_path": "",
+            "file_fetch_overwrite": true,
+            "file_dl_path": "",
+            "file_dl_name": "",
+            "file_up_path": "",
+            "file_up_overwrite": true
+          }
+        ],
+        "else": [],
+        "elseIf": []
+      },
+      {
+        "type": "task",
+        "target": "data",
+        "cmd": "",
+        "http_url": "",
+        "http_method": "GET",
+        "http_fail_non2xx": true,
+        "http_headers": [],
+        "http_body": "",
+        "http_extract": [],
+        "data_op": "read",
+        "data_loc": "server",
+        "data_fmt": "json",
+        "data_key": "",
+        "data_path": "versiondata/version.json",
+        "data_write_mode": "mapping",
+        "data_map": [],
+        "data_raw": "",
+        "data_extract": [
+          {
+            "path": "checkversion",
+            "name": "oldversion"
+          }
+        ],
+        "file_action": "fetch",
+        "file_fetch_url": "",
+        "file_fetch_path": "",
+        "file_fetch_overwrite": true,
+        "file_dl_path": "",
+        "file_dl_name": "",
+        "file_up_path": "",
+        "file_up_overwrite": true
+      },
+      {
+        "type": "if",
+        "cond": {
+          "kind": "var_compare",
+          "expect": "RUNNING",
+          "server_id": "",
+          "leftType": "var",
+          "leftExpr": "javaversion",
+          "op": "eq",
+          "rightType": "var",
+          "rightExpr": "oldversion"
+        },
+        "then": [
+          {
+            "type": "task",
+            "target": "command",
+            "cmd": "say 最新バージョンが一致しました！ > %javaversion%",
+            "http_url": "",
+            "http_method": "GET",
+            "http_fail_non2xx": true,
+            "http_headers": [],
+            "http_body": "",
+            "http_extract": [],
+            "data_op": "read",
+            "data_loc": "local",
+            "data_fmt": "json",
+            "data_key": "",
+            "data_path": "",
+            "data_write_mode": "mapping",
+            "data_map": [],
+            "data_raw": "",
+            "data_extract": [],
+            "file_action": "fetch",
+            "file_fetch_url": "",
+            "file_fetch_path": "",
+            "file_fetch_overwrite": true,
+            "file_dl_path": "",
+            "file_dl_name": "",
+            "file_up_path": "",
+            "file_up_overwrite": true
+          }
+        ],
+        "else": [
+          {
+            "type": "task",
+            "target": "command",
+            "cmd": "say バージョンが一致しませんでした！ > [OLD]%oldversion% : [NEW]%javaversion%",
+            "http_url": "",
+            "http_method": "GET",
+            "http_fail_non2xx": true,
+            "http_headers": [],
+            "http_body": "",
+            "http_extract": [],
+            "data_op": "read",
+            "data_loc": "local",
+            "data_fmt": "json",
+            "data_key": "",
+            "data_path": "",
+            "data_write_mode": "mapping",
+            "data_map": [],
+            "data_raw": "",
+            "data_extract": [],
+            "file_action": "fetch",
+            "file_fetch_url": "",
+            "file_fetch_path": "",
+            "file_fetch_overwrite": true,
+            "file_dl_path": "",
+            "file_dl_name": "",
+            "file_up_path": "",
+            "file_up_overwrite": true
+          }
+        ],
+        "elseIf": []
+      },
+      {
+        "type": "task",
+        "target": "data",
+        "cmd": "",
+        "http_url": "",
+        "http_method": "GET",
+        "http_fail_non2xx": true,
+        "http_headers": [],
+        "http_body": "",
+        "http_extract": [],
+        "data_op": "write",
+        "data_loc": "server",
+        "data_fmt": "json",
+        "data_key": "",
+        "data_path": "versiondata/version.json",
+        "data_write_mode": "mapping",
+        "data_map": [
+          {
+            "var": "javaversion",
+            "path": "checkversion"
+          }
+        ],
+        "data_raw": "",
+        "data_extract": [],
+        "file_action": "fetch",
+        "file_fetch_url": "",
+        "file_fetch_path": "",
+        "file_fetch_overwrite": true,
+        "file_dl_path": "",
+        "file_dl_name": "",
+        "file_up_path": "",
+        "file_up_overwrite": true
+      }
+    ],
+    "next": 1760562273,
+    "last": null,
+    "running": false,
+    "note": "Minecraft PaperMCサーバーの最新バージョンのチェックをします。\nもし記録していたバージョンと違いがあった場合一度だけ通知をしてくれます。"
+  }
+]
