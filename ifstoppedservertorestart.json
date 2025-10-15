@@ -1,0 +1,45 @@
+[
+  {
+    "id": "b0f58daa-607e-4b75-81c5-4a561727c77f",
+    "server_id": "84b4b20f-7552-4cc9-b06a-26c87ef7073d",
+    "name": "もし停止していたら起動する",
+    "enabled": true,
+    "schedule": "interval",
+    "interval_m": 1,
+    "time": "03:00",
+    "days": [],
+    "date_o_daily": "",
+    "dom": [],
+    "time_m": "03:00",
+    "once_at": null,
+    "steps": [
+      {
+        "type": "if",
+        "cond": {
+          "kind": "server_status",
+          "expect": "STOPPED",
+          "server_id": ""
+        },
+        "then": [
+          {
+            "type": "task",
+            "target": "start",
+            "cmd": ""
+          }
+        ],
+        "else": [
+          {
+            "type": "task",
+            "target": "command",
+            "cmd": "title @a title {\"text\":\"起動してました！\"}"
+          }
+        ],
+        "elseIf": []
+      }
+    ],
+    "next": 1760426096,
+    "last": null,
+    "running": false,
+    "note": "もし停止していたら =起動する\nもし起動してるなら =起動してましたと通知"
+  }
+]
